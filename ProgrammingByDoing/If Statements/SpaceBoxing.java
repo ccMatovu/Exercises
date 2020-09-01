@@ -12,8 +12,7 @@ public class SpaceBoxing {
 
         System.out.println("Which planet are you visiting?");
         int num = input.nextInt();
-        String planet;
-
+        String planet="";
 
         if(num == 1){
             planet = "Venus";
@@ -39,7 +38,7 @@ public class SpaceBoxing {
             planet = "Neptune";
             weight = weight*1.23;
         }
-        System.out.println("Your weight would be "+weight+" pounds on that planet.");
-
+        //System.out.println("Your weight would be "+weight+" pounds on that planet.");
+        System.out.println("Your weight would be "+weight+" pounds on "+planet);
     }
 }
