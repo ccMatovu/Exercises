@@ -7,11 +7,13 @@ public class CountingWhile {
         System.out.println( "Type in a message, and I'll display it five times." );
         System.out.print( "Message: " );
         String message = keyboard.nextLine();
+        System.out.println("How many time do you want to print the message\nEnter Here the number:");
+        int repeat = keyboard.nextInt();
 
-        int n = 0;
-        while ( n < 5 )
+        int n = 1;
+        while ( n < repeat+1)
         {
-            System.out.println( (n+1) + ". " + message );
+            System.out.println( (n*10) + ". " + message );
             n++;
         }
     }
