@@ -1,8 +1,7 @@
 import java.util.Random;
 
 public class FlickerPhrase {
-    public static void main( String[] args )
-    {
+    public static void main( String[] args ) throws InterruptedException {
         Random rng = new Random();
         int r;
 
@@ -11,6 +10,19 @@ public class FlickerPhrase {
             r = 1 + rng.nextInt(5);
             // Write five if statements here.
             // If r is 1, then call the function named 'first'.
+            if(r == 1){
+                fifth();
+            }else if(r==2){
+                second();
+            }else if(r==3){
+                third();
+            }else if(r==4){
+                fourth();
+            }else if(r==5){
+                fifth();
+            }else{
+                Thread.sleep(1000);
+            }
             // If r is 2, then call the function named 'second', and so on.
 
 
