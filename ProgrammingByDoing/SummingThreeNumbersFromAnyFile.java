@@ -18,7 +18,6 @@ public class SummingThreeNumbersFromAnyFile {
         num2 = input.nextInt();
         num3 = input.nextInt();
         input.close();
-
         System.out.println( num1 + " + " + num2 + " + " + num3 + " = " + (num1+num2+num3));
     }
 }
