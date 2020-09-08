@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class WhereIsIt {
     public static void main(String[] args) {
-        int[] num = new int[10];
+        int[] num = new int[11];
         Random random = new Random();
         int randomNum;
         System.out.print("Array: ");
