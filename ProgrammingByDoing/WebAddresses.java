@@ -1,6 +1,6 @@
 import java.net.URL;
 import java.util.Scanner;
-
+//uncomment address class to run
 //class Address
 //{
 //    String street;

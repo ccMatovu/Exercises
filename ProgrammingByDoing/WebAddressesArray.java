@@ -1,13 +1,13 @@
 import java.net.URL;
 import java.util.Scanner;
-
-class Address
-{
-    String street;
-    String city;
-    String state;
-    int zip;
-}
+//uncommment address class to run
+//class Address
+//{
+//    String street;
+//    String city;
+//    String state;
+//    int zip;
+//}
 
 public class WebAddressesArray
 {
