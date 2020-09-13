@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class LilDatabase {
+public class LilDatabaseLoop {
     public static void main(String[] args) {
         Student[] students = new Student[3];
         Scanner scan = new Scanner(System.in);
