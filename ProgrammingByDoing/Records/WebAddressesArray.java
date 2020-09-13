@@ -1,3 +1,5 @@
+package Records;
+
 import java.net.URL;
 import java.util.Scanner;
 //uncommment address class to run
