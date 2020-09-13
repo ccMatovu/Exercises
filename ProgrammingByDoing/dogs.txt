@@ -1,0 +1,9 @@
+Yorkie
+4
+14
+Great_Dane
+7
+93
+Labrador
+6
+23
