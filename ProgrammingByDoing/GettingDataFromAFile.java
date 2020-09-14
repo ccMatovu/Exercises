@@ -11,8 +11,12 @@ public class GettingDataFromAFile {
         Dog[] dogs = new Dog[3];
         Dog doggy = new Dog();
 
-        File text = new File(file);
-        scan = new Scanner(text);
+        try {
+            File text = new File(file);
+            scan = new Scanner(text);
+        }catch (FileNotFoundException e){
+            System.out.println("file missing"+e);
+        }
         for(int i=0;i<dogs.length;i++){
             dogs[i] = doggy;
             dogs[i].breed = scan.nextLine();
