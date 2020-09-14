@@ -27,7 +27,7 @@ public class ReadingWhatYouWrote {
             i++;
         }
         for(int j=0; j<cars.length;j++){
-            System.out.print("\nCar "+j+"\n\t\t Make: "+cars[j]+"\n\t\t Model: "+cars[j].model+
+            System.out.print("\nCar "+j+"\n\t\t Make: "+cars[j].make+"\n\t\t Model: "+cars[j].model+
                     "\n\t\t Year: "+cars[j].year+"\n\t\t License: "+cars[j].plateNum);
         }
     }
