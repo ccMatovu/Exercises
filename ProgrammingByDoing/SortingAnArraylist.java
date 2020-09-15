@@ -6,7 +6,7 @@ public class SortingAnArraylist {
         ArrayList<Integer> list = new ArrayList<>();
         Random random = new Random();
         int num,count=0;
-        while (count<4){
+        while (count<22){
             num = random.nextInt(89)+10;
             list.add(num);
             count++;
@@ -20,11 +20,11 @@ public class SortingAnArraylist {
         int count = 0;
         int temp;
         while(count<list.size()){
-            for(int i =0; i<list.size()-1;i++){
+            for(int i =count; i<list.size()-1;i++){
                 if((list.get(count)>list.get(i+1))){
                     temp = list.get(count);
-                    list.set(count,list.get(i));
-                    list.set(i,temp);
+                    list.set(count,list.get(i+1));
+                    list.set(i+1,temp);
                 }
             }
             count++;
