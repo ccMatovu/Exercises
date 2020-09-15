@@ -8,9 +8,9 @@ public class BasicArraylists3 {
 
         int count =0;
         while(count<1000){
-            count++;
             int num = randomNum.nextInt(89)+10;
             randoms.add(num);
+            count++;
         }
         System.out.println(randoms);
     }
