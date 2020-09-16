@@ -8,4 +8,5 @@ out/
 ProgrammingByDoing/.idea/*
 ProgrammingByDoing/out/*
 ProgrammingByDoing/ProgrammingByDoing.iml
+*.xml
 
