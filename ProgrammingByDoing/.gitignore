@@ -1,0 +1,11 @@
+/shelf/
+/workspace.xml
+*.class
+*.jar
+*.iml
+*.idea/
+out/
+ProgrammingByDoing/.idea/*
+ProgrammingByDoing/out/*
+ProgrammingByDoing/ProgrammingByDoing.iml
+
