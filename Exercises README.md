@@ -4,4 +4,4 @@ This repo contains my solutions to various programming exercises. I do these exe
 
 **ProgrammingByDoing**
 
-[This](ccm-chucky/Exercises/ProgrammingByDoing/) folder contains my solutions to the Java exercises collected by Graham Mitchell and hosted at https://programmingbydoing.com/ 
+[This](https://github.com/ccm-chucky/Exercises/tree/master/ProgrammingByDoing) folder contains my solutions to the Java exercises collected by Graham Mitchell and hosted at https://programmingbydoing.com/ 
