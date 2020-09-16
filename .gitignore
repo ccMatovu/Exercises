@@ -5,6 +5,6 @@
 *.iml
 *.idea/
 out/
-ProgrammingByDoing/.idea
-ProgrammingByDoing/out
+ProgrammingByDoing/.idea/
+ProgrammingByDoing/out/
 ProgrammingByDoing/ProgrammingByDoing.iml
