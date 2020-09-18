@@ -8,5 +8,17 @@ import java.util.List;
 public class MaxLength {
     public static void main(String[] args) {
         ArrayList<String> list = new ArrayList<>(Arrays.asList("one","day","today","and","collections"));
+        int len = maxLength(list);
+        System.out.println("the longest is "+len);
+    }
+
+    private static int maxLength(ArrayList<String> list) {
+        int longest = 0;
+        for(String current: list){
+            if(current.length() > longest){
+                longest = current.length();
+            }
+        }
+        return longest;
     }
 }
