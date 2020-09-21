@@ -1,4 +1,4 @@
-/*
+package ArrayLists;/*
 Suppose that a class Point2D has been defined for storing a 2-dimensional point
 with x and y coordinates (both as doubles).
 The class includes the following members:
@@ -25,10 +25,10 @@ public class Point2D {
     public static void main(String[] args) {
 
     }
-    public int compareTo(Point2D o) {
-        Point2D origin = new Point2D(0, 0);
-        double newDist = distance(origin);
-        double originDist = o.distance(origin);
-        return Double.compare(newDist, originDist);
-    }
+//    public int compareTo(Point2D o) {
+//        Point2D origin = new Point2D(0, 0);
+//        double newDist = distance(origin);
+//        double originDist = o.distance(origin);
+//        return Double.compare(newDist, originDist);
+//    }
 }
