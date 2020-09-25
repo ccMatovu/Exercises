@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 
 public class HasOdd {
     public static void main(String[] args) {
-        Set<Integer> set= Stream.of(0, 1, 2).collect(Collectors.toCollection(HashSet::new));
+        Set<Integer> set= Stream.of(22, 23, 12,1,5,99).collect(Collectors.toCollection(HashSet::new));
         System.out.println(hasOdd(set));
     }
 
