@@ -1,6 +1,12 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+
+/*
+Write a method contains3 that accepts a List of strings as a parameter and returns true if any
+single string occurs at least 3 times in the list, and false otherwise.
+Use a map as auxiliary storage.
+ */
+
+
+import java.util.*;
 
 public class Contains3 {
     public static void main(String[] args) {
@@ -23,5 +29,23 @@ public class Contains3 {
         }
         return false;
     }
-    
+//    private static boolean contains3(List<String> list) {
+//        Map<String, Integer> contain = new HashMap<>();
+//        for (String theKey : list) {
+//            if (contain.containsKey(theKey)) {
+//                contain.put(theKey, contain.get(theKey) + 1);
+//            } else {
+//                contain.put(theKey, 1);
+//            }
+//        }
+//
+//        for (Integer theValue : contain.values()) {
+//            if (theValue >= 3) {
+//                return true;
+//            }
+//        }
+//
+//        return false;
+//    }
+
 }
