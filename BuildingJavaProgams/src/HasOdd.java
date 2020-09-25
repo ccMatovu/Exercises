@@ -11,7 +11,9 @@ import java.util.stream.Stream;
 public class HasOdd {
     public static void main(String[] args) {
         Set<Integer> set= Stream.of(22, 23, 12,1,5,99).collect(Collectors.toCollection(HashSet::new));
-        System.out.println(hasOdd(set));
+        List<Integer> setNum = new ArrayList<>(Arrays.asList(22, 23, 12,1,5,99));
+        Set<Integer> set2 = new HashSet<>(setNum);
+        System.out.println(hasOdd(set2));
     }
 
     private static boolean hasOdd(Set<Integer> set) {

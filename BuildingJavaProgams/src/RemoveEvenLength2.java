@@ -34,5 +34,6 @@ public class RemoveEvenLength2 {
                 iterate.remove();
             }
         }
+
     }
 }
