@@ -18,10 +18,7 @@ three people of age 20 (Jeff, Kasey, Kim) and three people of age 22 (Alyssa, Ke
 So a call of rarest(m) would now return 20 because 20 is the smaller of the rarest values.
  */
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Rarest {
     public static void main(String[] args) {
@@ -38,31 +35,25 @@ public class Rarest {
     }
 
     private static int rarest(Map<String, Integer> map) {
-        List<Integer> values = new ArrayList<>();
-        List<String> keys =new ArrayList<String>();
-        keys.addAll(map.keySet());
-        values.addAll(map.values());
-        String rare ="";
-        int age=0;
-        int rareNum= Integer.MAX_VALUE;
-        for(int i=0;i<keys.size();i++){
-            int check =0;
-            for(int j=0;j<values.size();j++){
-                if(map.get(keys.get(i)) == values.get(j)){
-                    check++;
-                }
-            }
-            if (check < rareNum) {
-                rareNum = check;
-                age =map.get(keys.get(i));
-                rare =keys.get(i);
-            }else if(check == rareNum){
-                if(age > map.get(keys.get(i))){
-                    age = map.get(keys.get(i));
-                }
+        Map<Integer, Integer> ages = new TreeMap<>();
+        for (Integer val : map.values()) {
+            if (ages.containsKey(val)) {
+                ages.put(val, ages.get(val) + 1);
+            } else {
+                ages.put(val, 1);
             }
         }
-        return age;
-
+        int check = Integer.MAX_VALUE;
+        int rareAge = Integer.MAX_VALUE;
+        for (Integer key : ages.keySet()) {
+            int val = ages.get(key);
+            if (val < check) {
+                check = val;
+                rareAge = key;
+            }
+        }
+        return rareAge;
     }
+
+
 }
