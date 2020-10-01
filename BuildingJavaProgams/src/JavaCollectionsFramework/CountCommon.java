@@ -9,7 +9,8 @@ contains the values [-5, 15, 2, -1, 7, 15, 36], your method should return 4
 
 import java.util.*;
 
-public class CountCommon {
+public class
+ CountCommon {
     public static void main(String[] args) {
         List<Integer> list1 = new ArrayList<Integer>(Arrays.asList(3, 7, 3, -1, 2, 3, 7, 2, 15, 15));
         List<Integer> list2 = new ArrayList<Integer>(Arrays.asList(-5, 15, 2, -1, 7, 15, 36));
