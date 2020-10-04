@@ -1,3 +1,5 @@
+package Recursion;
+
 /*
   Write a method starString that accepts an integer parameter n
   and returns a string of stars (asterisks) 2^n long (i.e., 2 to the nth power).

@@ -1,4 +1,4 @@
-/*
+package Recursion;/*
  * Write a method writeNums that accepts an integer parameter n and prints
  * the first n integers starting with 1 in sequential order, separated by
  * commas. Your method should throw an IllegalArgumentException if passed

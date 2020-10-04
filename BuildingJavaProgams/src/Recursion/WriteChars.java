@@ -1,4 +1,4 @@
-/*
+package Recursion;/*
   Write a method writeChars that accepts an integer parameter n
   and that prints out n characters as follows.
   The middle character of the output should always be an asterisk ("*").
@@ -30,5 +30,6 @@ public class WriteChars {
             System.out.print("<");
             writeChars(n - 2);
             System.out.print(">");
+        }
     }
 }

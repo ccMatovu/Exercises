@@ -10,13 +10,14 @@ public class SumTo {
         System.out.println("sum: "+sum);
     }
 
-    private static int sumTo(int n) {
+    static double sumTo(int n) throws IllegalArgumentException {
         if (n < 0) {
             throw new IllegalArgumentException();
         } else if (n == 0) {
-            return (int) 0.0;
+            return 0;
         } else {
-            return (int) (1.0 / n + sumTo(n - 1));
+            return (double) 1 / n + sumTo(n - 1);
         }
     }
+
 }
