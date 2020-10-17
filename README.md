@@ -10,4 +10,4 @@ This repo contains my solutions to various programming exercises. I do these exe
 
 **BuildingJavaPrograms**
 
-[This](https://github.com/ccm-chucky/Exercises/tree/master/BuildingJavaProgams/src) folder contains my solutions to problems in the 5th edition of the book Building Java Programs. The problems can be found at the [practice it](https://practiceit.cs.washington.edu/problem/list) website by the University of Washington.
+[This]https://github.com/ccm-chucky/Exercises/tree/master/BuildingJavaProgams/src) folder contains my solutions to problems in the 5th edition of the book Building Java Programs. The problems can be found at the [practice it](https://practiceit.cs.washington.edu/problem/list) website by the University of Washington.
