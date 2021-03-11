@@ -9,8 +9,9 @@ public class range {
     *  is 1.
 */
 
-    public static void main(String[] args) {
 
+
+    public static void main(String[] args) {
         int[] array = {8, 3, 5, 7, 2, 4};
 
         int result = range(array);
