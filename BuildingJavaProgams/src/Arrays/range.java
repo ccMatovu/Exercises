@@ -1,3 +1,5 @@
+package Arrays;
+
 public class range {
     /*
     * Write a static method named range that takes an array of integers
