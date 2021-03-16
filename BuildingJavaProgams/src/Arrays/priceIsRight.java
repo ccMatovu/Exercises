@@ -11,8 +11,20 @@ package Arrays;
 
 public class priceIsRight {
     public static void main(String[] args) {
-        int[] elements = {200, 300, 250, 999, 40};
-        System.out.println(priceIsRight(elements, 280));
+        int[] elements = {81, 11, 57, 7, 28, 48, 57, 99, 64, 46, 79, 88, 50, 37, 52, 13, 93, 10, 21};
+        System.out.println(priceIsRight(elements, 81));
+    }
+    public static int priceIsRight(int[] bids, int price){
+        int rightPrice=-1;
+        for(int i=0;i<bids.length;i++){
+            if(bids[i] <=price){
+                if(bids[i] > rightPrice){
+                    rightPrice = bids[i];
+                    //System.out.println(rightPrice);
+                }
+            }
+        }
+        return rightPrice;
     }
 
 }
