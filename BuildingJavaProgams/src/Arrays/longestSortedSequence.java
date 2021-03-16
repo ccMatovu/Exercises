@@ -18,6 +18,29 @@ public class longestSortedSequence {
 
         System.out.println(longestSortedSequence(array));
     }
-    
+    public static int longestSortedSequence(int[] array){
+        if(array.length ==0){
+            return 0;
+        }else if(array.length == 1){
+            return 1;
+        }
+        int longest = 0;
+        int sequence =1;
+
+        for(int i=0;i<array.length-1;i++){
+
+            if(array[i] <= array[i+1]){
+                sequence +=1;
+            }else{
+                sequence =1;
+            }
+
+            if(sequence > longest){
+                longest =sequence;
+            }
+        }
+
+        return longest;
+    }
 
 }
