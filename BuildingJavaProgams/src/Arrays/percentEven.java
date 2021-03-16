@@ -10,6 +10,8 @@ public class percentEven {
        all, return 0.0.*/
     public static void main(String[] args) {
         int[] array = {6,2,9,11,3};
+        int[] a ={};
+        //System.out.println(0/a.length);
         System.out.println(percentEven(array));
     }
 
@@ -24,6 +26,10 @@ public class percentEven {
         }
         System.out.println(sum);
 
-        return (sum/ array.length)*100 ;
+        if(array.length == 0){
+            return 0.0;
+        }else {
+            return (sum / array.length) * 100;
+        }
     }
 }
