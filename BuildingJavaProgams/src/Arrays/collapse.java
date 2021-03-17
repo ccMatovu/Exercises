@@ -16,7 +16,25 @@ package Arrays;
 
 public class collapse {
     public static void main(String[] args) {
-        System.out.println(collapse({7, 2, 8, 9, 4, 13, 7, 1, 9, 10}));
+        int[] list = {7, 2, 8, 9, 4, 13, 7, 1, 9, 10};
+
+        collapse(list);
     }
-    
+    public static int[] collapse(int[]list){
+        int size=0;
+        int length = list.length;
+        int[] array;
+        if (length % 2 == 0) {
+            array = new int[length / 2];
+        } else {
+            array = new int[length / 2 + 1];
+            array[length / 2] = list[list.length - 1];
+        }
+
+        for(int i=0;i<list.length/2;i++){
+               array[i] = list[2*i] + list[2*i+1];
+
+        }
+        return array;
+    }
 }
