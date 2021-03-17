@@ -17,13 +17,32 @@ Then the call of contains(list1, list2) should return true because
 
 public class contains {
     public static void main(String[] args) {
-        int[] list1 = {1, 6, 2, 1, 4, 1, 2, 1, 8};
-        int[] list2 = {1, 2, 1};
+        int[] list1 = { 1,2, 1, 2,3};
+        int[] list2 = {1, 2, 3};
 
         System.out.println(contains(list1,list2));
     }
 
     public static boolean contains(int[] list1, int[]list2){
-
+        if(list2.length > list1.length){
+            return false;
+        }
+        int count=0;
+        for(int i=0;i<list1.length;i++){
+            for(int j=0;j<list2.length;j++){
+                int check =i+j;
+                if((check <list1.length) && (list1[check] == list2[j]) ){
+                    count++;
+                    //System.out.println(list1[check]);
+                    //System.out.println("i="+i);
+                }
+            }
+            if(count == list2.length){
+                return true;
+            }else{
+                count=0;
+            }
+        }
+        return false;
     }
 }
