@@ -17,8 +17,13 @@ package Arrays;
 public class collapse {
     public static void main(String[] args) {
         int[] list = {7, 2, 8, 9, 4, 13, 7, 1, 9, 10};
+        int[] collapsedList = new int[(list.length+1)/2];
 
-        collapse(list);
+        System.arraycopy(collapse(list),0,collapsedList,0,(list.length+1)/2);
+
+        for(int z=0;z<collapsedList.length;z++){
+            System.out.println(collapsedList[z]);
+        }
     }
     public static int[] collapse(int[]list){
         int size=0;
