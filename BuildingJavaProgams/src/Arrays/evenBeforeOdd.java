@@ -15,9 +15,9 @@ public class evenBeforeOdd {
     public static void main(String[] args) {
         int[] array ={5,11, 10, 8};
 
-        int[] result = Arrays.copyOf(evenBeforeOdd(array),array.length);
+        evenBeforeOdd(array);
 
-        System.out.println(Arrays.toString(result));
+        System.out.println(Arrays.toString(array));
     }
 
     public static int[] evenBeforeOdd(int[] array){
