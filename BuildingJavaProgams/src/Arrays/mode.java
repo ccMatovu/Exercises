@@ -11,7 +11,32 @@ public class mode {
         int[] array = {27,15,15,11,27};
         System.out.println(mode(array));
     }
+
     public static int mode(int[] array) {
+        if(array.length == 1){
+            return array[0];
+        }
+        int elementCount =0;
+        int most=0;
+        int mode = array[0];
+        for(int i=0;i< array.length;i++){
+            elementCount =0;
+            for(int j=i+1;j<array.length;j++){
+
+                if(array[i] == array[j]){
+                    elementCount++;
+                }
+            }
+            if(elementCount > most){
+                most = elementCount;
+                mode = i;
+            }else if((elementCount == most) && (array[mode] > array[i] )){
+                mode = i;
+            }
+
+        }
+        return array[mode];
+
 //        int[] spareArray = new int[101];
 //
 //        for (int i = 0; i < array.length; i++) {
@@ -29,24 +54,6 @@ public class mode {
 //        }
 //
 //        return mode;
-        int elementCount =0;
-        int most=0;
-        int mode = array[0];
-        for(int i=1;i< array.length;i++){
-            for(int j=i+1;j<array.length;j++){
 
-                if(array[i] == array[j]){
-                    elementCount++;
-                }
-
-            }
-
-            if(elementCount > most){
-                most = elementCount;
-                mode = i;
-            }
-
-        }
-        return array[mode];
     }
 }
