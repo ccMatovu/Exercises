@@ -30,13 +30,23 @@ public class mode {
 //
 //        return mode;
         int elementCount =0;
+        int most=0;
+        int mode = array[0];
         for(int i=1;i< array.length;i++){
-            for(int j=0;j<array.length;j++){
+            for(int j=i+1;j<array.length;j++){
 
-                if()
+                if(array[i] == array[j]){
+                    elementCount++;
+                }
 
             }
 
+            if(elementCount > most){
+                most = elementCount;
+                mode = i;
+            }
+
         }
+        return array[mode];
     }
 }
