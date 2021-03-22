@@ -7,23 +7,36 @@ package Arrays;
  */
 
 public class mode {
+    public static void main(String[] args) {
+        int[] array = {27,15,15,11,27};
+        System.out.println(mode(array));
+    }
     public static int mode(int[] array) {
-        int[] spareArray = new int[101];
+//        int[] spareArray = new int[101];
+//
+//        for (int i = 0; i < array.length; i++) {
+//            spareArray[array[i]]++;
+//        }
+//
+//        int mode = 101;
+//        int count = 0;
+//
+//        for (int i = 0; i < spareArray.length; i++) {
+//            if (spareArray[i] > count) {
+//                count = spareArray[i];
+//                mode = i;
+//            }
+//        }
+//
+//        return mode;
+        int elementCount =0;
+        for(int i=1;i< array.length;i++){
+            for(int j=0;j<array.length;j++){
 
-        for (int i = 0; i < array.length; i++) {
-            spareArray[array[i]]++;
-        }
+                if()
 
-        int mode = 101;
-        int count = 0;
-
-        for (int i = 0; i < spareArray.length; i++) {
-            if (spareArray[i] > count) {
-                count = spareArray[i];
-                mode = i;
             }
-        }
 
-        return mode;
+        }
     }
 }
