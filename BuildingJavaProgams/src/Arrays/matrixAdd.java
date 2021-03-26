@@ -10,8 +10,11 @@ public class matrixAdd {
         int[][] result = new int[array2.length][array1.length];
 
         result = matrixAdd(array1,array2).clone();
+
+        System.out.println(Arrays.deepToString(result));
     }
 
     public static int[][] matrixAdd(int[][] array1,int[][] array2){
+        return array1;
     }
 }
