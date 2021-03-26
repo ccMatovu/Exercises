@@ -9,7 +9,7 @@ package Arrays;
 
 public class isMagicSquare {
     public static void main(String[] args) {
-        int[][] array = {{2, 7, 6},{9, 5, 1},{4, 3,8}};
+        int[][] array = {{2, 7, 6},{9, 5, 1},{4, 3}};
 
         System.out.println(isMagicSquare(array));
     }
@@ -19,37 +19,48 @@ public class isMagicSquare {
             return true;
         }
         int rowLength = array[0].length;
-        int previousSum=0;
+        int NumberOfRows = array.length;
+        int previousRowSum=0;
         int diagonal =0;
         for(int i=0;i< array.length;i++) {
-            int colNum = 0;
+            int NumberOfItemsInRow = 0; //this is the number of colums
 
-            int currentSum = 0;
-             diagonal+=array[i][i];
+            int rowSum = 0;
 
             for (int j = 0; j < array[i].length; j++) {
-                currentSum += array[i][j];
-                colNum++;
-                System.out.println(currentSum + "columNums  " + colNum);
+                rowSum += array[i][j];
+                NumberOfItemsInRow++;
+               // System.out.println(rowSum + "columNums  " + NumberOfItemsInRow);
             }
 
-            if (i != 0 && currentSum != previousSum) {
+            if ((i != 0) && (rowSum != previousRowSum) && array[i].length != rowLength) {
                 return false;
             } else {
-                previousSum = currentSum;
+                previousRowSum = rowSum;
             }
-            if (array[i].length != rowLength) {
+
+            if (NumberOfItemsInRow != NumberOfRows ) {
                 return false;
             }
 
-            if (colNum != array.length ) {
-                return false;
-            }
+            diagonal+=array[i][i];
 
         }
-        if(diagonal != previousSum){
+        if(diagonal != previousRowSum){
             return false;
         }
+
+        int columnLength = rowLength;
+        for(int col=0; col < columnLength; col++){
+            int columnSum=0;
+            for(int row=0;row<rowLength;row++){
+                columnSum += array[row][col];
+            }
+            if(columnSum != previousRowSum){
+                return false;
+            }
+        }
+
 
         return true;
     }
