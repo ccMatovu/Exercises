@@ -19,27 +19,35 @@ public class isMagicSquare {
             return true;
         }
         int rowLength = array[0].length;
-        int colNum =0;
         int previousSum=0;
-        for(int i=0;i< array.length;i++){
-            colNum++;
-            int currentSum=0;
+        int diagonal =0;
+        for(int i=0;i< array.length;i++) {
+            int colNum = 0;
 
-            for (int j=0;j<array[i].length;j++){
-                currentSum+=array[i][j];
-                System.out.println(currentSum);
+            int currentSum = 0;
+             diagonal+=array[i][i];
+
+            for (int j = 0; j < array[i].length; j++) {
+                currentSum += array[i][j];
+                colNum++;
+                System.out.println(currentSum + "columNums  " + colNum);
             }
 
-            if(i !=0 && currentSum != previousSum){
+            if (i != 0 && currentSum != previousSum) {
                 return false;
-            }else{
+            } else {
                 previousSum = currentSum;
             }
-            if(array[i].length != rowLength){
+            if (array[i].length != rowLength) {
                 return false;
             }
+
+            if (colNum != array.length ) {
+                return false;
+            }
+
         }
-        if(colNum != rowLength){
+        if(diagonal != previousSum){
             return false;
         }
 
