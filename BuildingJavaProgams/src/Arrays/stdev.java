@@ -5,6 +5,10 @@ package Arrays;
  * between each element and the mean, divided by one less than the number of elements.
  */
 public class stdev {
+    public static void main(String[] args) {
+        int array[] = {1, -2, 4, -4, 9, -6, 16, -8, 25, -10};
+        System.out.println(stdev(array));
+    }
     public static double stdev(int[] array) {
         int sum = 0;
 
@@ -13,12 +17,11 @@ public class stdev {
         }
 
         double average = (double)sum / array.length;
-        double top = 0;
+        double numerator = 0;
 
         for (int i = 0; i < array.length; i++) {
-            top += Math.pow(array[i] - average, 2);
+            numerator += Math.pow(array[i] - average, 2);
         }
-
-        return Math.sqrt(top / (array.length - 1));
+        return Math.sqrt(numerator / (array.length - 1));
     }
 }
