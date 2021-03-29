@@ -19,5 +19,14 @@ public class manhattanDistancePoint extends flipPoint {
 
     public static void main(String[] args) {
 
+        manhattanDistancePoint point = new manhattanDistancePoint(4,-6);
+        manhattanDistancePoint other = new manhattanDistancePoint(2,3);
+        int distance = point.manhattanDistance(other);
+        System.out.println(distance);
+    }
+
+    public  int manhattanDistance(Point other){
+
+        return Math.abs(this.x-other.x)+Math.abs(this.y-other.y);
     }
 }
