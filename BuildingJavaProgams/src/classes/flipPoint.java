@@ -14,9 +14,12 @@ public class flipPoint extends Point {
     }
 
     public static void main(String[] args) {
-       
+        flipPoint point = new flipPoint(2,-1);
+        System.out.println("The point is "+point.x+","+point.y);
+        point.flip();
+        System.out.println("Afterfliping the point is "+point.x+","+point.y);
 
-
+        
     }
 
     public void flip(){
