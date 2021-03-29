@@ -14,13 +14,19 @@ Returns which quadrant of the x/y plane this Point object falls in.
 
 public class quadrantPoint {
     public static void main(String[] args) {
+        Point point = new Point(2,3);
+        System.out.println("This point is in quadrant number "+point.quadrant());
 
     }
 
 }
-public class Point {
+ class Point {
     private int x;
     private int y;
+    Point(int x, int y){
+        this.x=x;
+        this.y=y;
+    }
 
     public int quadrant() {
         int quad = 1;
