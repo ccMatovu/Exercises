@@ -19,7 +19,7 @@ public class flipPoint extends Point {
         point.flip();
         System.out.println("Afterfliping the point is "+point.x+","+point.y);
 
-        
+
     }
 
     public void flip(){
