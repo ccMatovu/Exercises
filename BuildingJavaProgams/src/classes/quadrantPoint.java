@@ -16,4 +16,28 @@ public class quadrantPoint {
     public static void main(String[] args) {
 
     }
+
+}
+public class Point {
+    private int x;
+    private int y;
+
+    public int quadrant() {
+        int quad = 1;
+
+        if (this.x == 0 || this.y == 0) {
+            quad = 0;
+        } else if (this.x > 0 && this.y > 0) {
+            quad = 1;
+        } else if (this.x < 0 && this.y > 0) {
+            quad = 2;
+        } else if (this.x < 0 && this.y < 0) {
+            quad = 3;
+        } else if (this.x > 0 && this.y < 0) {
+            quad = 4;
+        } else {
+            quad = 0;
+        }
+        return quad;
+    }
 }
