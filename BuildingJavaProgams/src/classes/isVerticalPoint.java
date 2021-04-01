@@ -14,6 +14,17 @@ public class isVerticalPoint extends Point{
     }
 
     public static void main(String[] args) {
+        isVerticalPoint point = new isVerticalPoint(2,4);
+        Point other = new Point(2,4);
+        System.out.println(point.isVertical(other));
 
+    }
+
+    public boolean isVertical(Point other){
+        if(other.x == this.x){
+            return true;
+        }else{
+            return false;
+        }
     }
 }
