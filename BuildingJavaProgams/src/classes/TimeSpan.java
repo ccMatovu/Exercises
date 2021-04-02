@@ -27,4 +27,14 @@ public class TimeSpan {
             hours += 1;
         }
     }
+
+    public void subtract(TimeSpan span){
+        if(span.getMinutes() > minutes){
+            minutes = (minutes + 60)- span.getMinutes();
+            hours -= (1+ span.hours);
+        }else {
+            hours -= span.getHours();
+            minutes -= span.getMinutes();
+        }
+    }
 }
