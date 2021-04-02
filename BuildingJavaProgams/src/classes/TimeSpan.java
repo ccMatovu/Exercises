@@ -5,7 +5,8 @@ public class TimeSpan {
     private int minutes;
 
     public void add(int hours, int minutes){
-        int added = hours + minutes;
+        this.hours += hours;
+        this.minutes +=minutes;
     }
     public int getHours(){
         return hours;
@@ -15,5 +16,15 @@ public class TimeSpan {
     }
     public String toString(){
         return String.valueOf(hours);
+    }
+
+    public void add(TimeSpan span){
+        hours += span.getHours();
+        minutes += span.getMinutes();
+
+        if(minutes >= 60){
+            minutes = minutes-60;
+            hours += 1;
+        }
     }
 }
