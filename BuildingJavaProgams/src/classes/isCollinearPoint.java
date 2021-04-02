@@ -20,30 +20,30 @@ Since Java's double type is imprecise, round all slope values to a reasonable
 public class isCollinearPoint {
     int x;
     int y;
-    public static void main(String[] args) {
-        Point pont1 = new Point(99,8);
-        Point pont2 = new Point(0,5);
 
-        isCollinearPoint point = new isCollinearPoint(2,15);
-        System.out.println(point.isCollinear(pont1,pont2));
+    public static void main(String[] args) {
+        Point pont1 = new Point(99, 8);
+        Point pont2 = new Point(0, 5);
+
+        isCollinearPoint point = new isCollinearPoint(2, 15);
+        System.out.println(point.isCollinear(pont1, pont2));
 
 
     }
 
     private boolean isCollinear(Point pont1, Point pont2) {
-        if ((this.x == pont1.x && this.x == pont2.x) || (this.y == pont1.y && this.y == pont2.y)) {
+        if (this.x == pont1.x && this.x == pont2.x) {
             return true;
         }
-        boolean check = false;
-        double slope1 = (pont1.y -pont2.y)/(pont1.x - pont2.x);
-        System.out.println(slope1);
-        double slope2 = (pont2.y - y)/(pont2.x - x);
-        System.out.println(slope2);
+        double slope1 = ((double) (this.y - pont1.y)) / (this.x - pont1.x);
+        double slope2 = ((double) (this.y - pont2.y)) / (this.x - pont2.x);
 
-        if(slope1 == slope2){
-            check = true;
+        if (slope1 == slope2) {
+
+            return true;
         }
-     return check;
+
+        return false;
     }
 
     isCollinearPoint(int x, int y){
