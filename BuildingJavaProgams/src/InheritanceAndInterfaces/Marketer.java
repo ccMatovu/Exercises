@@ -6,7 +6,7 @@ package InheritanceAndInterfaces;
 *  supplies last!" Make sure to interact with the Employee superclass as
 * appropriate.
 *
-*
+*/
 public class Marketer extends Employee {
     public void advertise() {
         System.out.println("Act now, while supplies last!");
@@ -16,4 +16,4 @@ public class Marketer extends Employee {
         return super.getSalary() + 10000.0;
     }
 }
-*/
+
