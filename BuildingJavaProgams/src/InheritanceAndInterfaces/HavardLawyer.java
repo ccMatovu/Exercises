@@ -6,7 +6,26 @@ package InheritanceAndInterfaces;
 * have to fill out four of the lawyer's forms to go on vacation. That is, the
 * getVacationForm method should return "pinkpinkpinkpink". Make sure to
 * interact with the superclass as appropriate.
- */
+ *
 
-public class HavardLawyer {
+public class HarvardLawyer extends Lawyer {
+    public double getSalary() {
+        return super.getSalary() * 1.2;
+    }
+
+    public int getVacationDays() {
+        return super.getVacationDays() + 3;
+    }
+
+    public String getVacationForm() {
+        String s = "";
+
+        for (int i = 0; i < 4; i++) {
+            s += super.getVacationForm();
+        }
+
+        return s;
+    }
 }
+
+*/
