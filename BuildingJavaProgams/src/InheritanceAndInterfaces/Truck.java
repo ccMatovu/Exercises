@@ -7,9 +7,8 @@ public class Truck extends Car{
     public void m2(){
         super.m1();
     }
-    public void toString(){
-        //return super.toString()+super.toString();
-        return "now";
+    public String toString(){
+        return super.toString()+super.toString();
     }
 
     public static void main(String[] args) {
