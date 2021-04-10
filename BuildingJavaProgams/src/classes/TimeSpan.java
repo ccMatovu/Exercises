@@ -37,4 +37,13 @@ public class TimeSpan {
             minutes -= span.getMinutes();
         }
     }
+    public void scale(int factor){
+        int min = this.minutes*factor;
+        this.hours= this.hours*factor;
+        while(min>=60){
+            min = min-60;
+            this.hours+=1;
+        }
+        this.minutes = min;
+    }
 }
