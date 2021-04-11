@@ -18,7 +18,20 @@ Write an instance method named transactionFee that will be placed inside the
 
 */
 public class transactionFeeBankAccount {
+    private int transactions;
+    private double balance;
+
     public boolean transactionFee(int fee){
-        
+        int fees=1;
+      for(int i=1;i<=this.transactions;i++){
+          fees+=(fee*i);
+      }
+      if(this.balance <= fees){
+
+          return false;
+      }else{
+          this.balance = balance - fees;
+      }
+      return true;
     }
 }
