@@ -17,4 +17,16 @@ There are some special cases you should handle. If the balance is negative,
 
 Benson, -$17.50*/
 public class toStringBankAccount {
+    int balance =0;
+    String name="";
+        public String toString() {
+            if (balance > 0) {
+                return String.format("%s, $%.2f", name, balance);
+            } else  if (balance < 0) {
+                return String.format("%s, -$%.2f", name, -balance);
+            } else {
+                return name + ", $0.00";
+            }
+        }
+
 }
