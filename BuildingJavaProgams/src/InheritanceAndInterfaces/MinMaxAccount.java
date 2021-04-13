@@ -21,5 +21,25 @@ public int getMax()	returns maximum balance in pennies
 The account's constructor sets the initial balance based on the Startup
 * information. Assume that only the debit and credit methods change an
 *  account's balance.*/
-public class MinMaxAccount {
+public class MinMaxAccount extends BankingAccount {
+    private int minBalance;
+    private int maxBalance;
+
+    public MinMaxAccount(Startup s) {
+        super(s);
+        minBalance = s.startup_getBalance();
+        maxBalance = s.startup_getBalance();
+    }
+
+    public void debit(Debit d) {
+        super.debit(d);
+
+        int balance = getBalance();
+
+        if(balance < minBalance)
+            minBalance = balance;
+
+        if(balance > maxBalance)
+            maxBalance = balance;
+    }
 }
