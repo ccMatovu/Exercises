@@ -22,7 +22,7 @@ public class transactionFeeBankAccount {
     private double balance;
 
     public boolean transactionFee(int fee){
-        int fees=1;
+        int fees=0;
       for(int i=1;i<=this.transactions;i++){
           fees+=(fee*i);
       }
