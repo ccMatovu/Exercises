@@ -1,4 +1,9 @@
 package StacksAndQueues;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+
 /*
 * Write a method splitStack that takes a stack of integers as a parameter and
 *  splits it into negatives and non-negatives. The numbers in the stack should
@@ -13,4 +18,28 @@ public class slitStack {
     public static void main(String[] args) {
         System.out.println("Check complete");
     }
+
+    public void splitStack(Stack<Integer> s) {
+        Queue<Integer> tempQueue = new LinkedList<Integer>();
+        int numNegatives = 0;
+
+        while(!s.isEmpty()) {
+            if(s.peek() < 0)
+                numNegatives++;
+            tempQueue.add(s.pop());
+        }
+
+        while(numNegatives > 0) {
+            if(tempQueue.peek() < 0) {
+                s.push(tempQueue.remove());
+                numNegatives--;
+            } else {
+                tempQueue.add(tempQueue.remove());
+            }
+        }
+
+        while(!tempQueue.isEmpty())
+            s.push(tempQueue.remove());
+    }
+
 }
