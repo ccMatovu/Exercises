@@ -35,7 +35,7 @@ public class slitStack {
 
         Object[] stackArrayAfter = stack.toArray();
         System.out.println("Stack After "+Arrays.asList(stackArrayAfter));
-        
+
     }
 
     public void splitStack(Stack<Integer> stack) {
