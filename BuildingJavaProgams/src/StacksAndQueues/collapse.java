@@ -2,6 +2,8 @@ package StacksAndQueues;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 /*
@@ -34,6 +36,33 @@ public class collapse {
         s.add(8);
 
         System.out.println("Original stack"+ Arrays.toString(s.toArray()));
+
+        collapse col = new collapse();
+        col.collapse(s);
+        System.out.println("\nCollapsed stack"+ Arrays.toString(s.toArray()));
+    }
+
+    public static void collapse(Stack<Integer> s){
+        Queue<Integer> tempQ = new LinkedList<>();
+
+        int size = s.size();
+
+        if(size % 2 ==0){
+            for (int i =0; i < size; i+=2){
+                int element1 = s.pop();
+                int element2 = s.pop();
+                tempQ.add(element1+element2);
+            }
+        }else {
+            tempQ.add(s.pop());
+            for (int i =0; i < size-1; i+=2){
+                int element1 = s.pop();
+                int element2 = s.pop();
+                tempQ.add(element1+element2);
+            }
+        }
+
         
+
     }
 }
