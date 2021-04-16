@@ -30,20 +30,37 @@ public class stutter {
 
         System.out.println(Arrays.toString(q.toArray()));
 
-        while(!s.isEmpty()){
-            int num = s.pop();
-            q.add(num);
-            q.add(num);
-
-        }
-        while(!q.isEmpty()){
+        while (!q.isEmpty()) {
             s.push(q.remove());
         }
+        System.out.println(Arrays.toString(s.toArray())+"\n\n");
 
-        while ((!s.isEmpty())){
-            q.add(s.pop());
+        stutter check = new stutter();
+        stutter.stuttter(s);
+
+        System.out.println(Arrays.toString(s.toArray()));
+    }
+
+    public static void stuttter(Stack<Integer> s) {
+        Queue<Integer> q = new LinkedList<>();
+        int element;
+        while (!s.isEmpty()) {
+            element = s.pop();
+            q.add(element);
+            q.add(element);
+        }
+        while (!q.isEmpty()) {
+            element = q.remove();
+            s.add(element);
         }
 
-        System.out.println(Arrays.toString(q.toArray()));
+        while (!s.isEmpty()){
+            element = s.pop();
+            q.add(element);
+        }
+        while (!q.isEmpty()){
+            element = q.remove();
+            s.add(element);
+        }
     }
 }
