@@ -1,8 +1,6 @@
 package StacksAndQueues;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 /*
 * Write a method splitStack that takes a stack of integers as a parameter and
@@ -16,7 +14,28 @@ import java.util.Stack;
 * You may use a single queue as auxiliary storage.*/
 public class slitStack {
     public static void main(String[] args) {
-        System.out.println("Check complete");
+        Stack<Integer> stack = new Stack<Integer>();
+        stack.add(14);
+        stack.add(2);
+        stack.add(-3);
+        stack.add(5);
+        stack.add(12);
+        stack.add(-3);
+        stack.add(-1);
+        stack.add(-12);
+        stack.add(6);
+        stack.add(8);
+        stack.add(-32);
+
+        Object[] stackArray = stack.toArray();
+        System.out.println("Stack Before "+Arrays.toString(stackArray));
+
+        slitStack slit = new slitStack();
+        slit.splitStack(stack);
+
+        Object[] stackArrayAfter = stack.toArray();
+        System.out.println("Stack After "+Arrays.asList(stackArrayAfter));
+        
     }
 
     public void splitStack(Stack<Integer> stack) {
