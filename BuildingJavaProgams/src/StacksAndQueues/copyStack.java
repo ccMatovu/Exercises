@@ -1,6 +1,8 @@
 package StacksAndQueues;
 
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 /*Write a method copyStack that takes a stack of integers as a parameter and returns
@@ -26,8 +28,34 @@ public class copyStack {
         originalStack.add(8);
 
         System.out.println("Original Stack"+ Arrays.toString(originalStack.toArray()));
-        System.out.println("Copied Stack"+ Arrays.toString(copiedStack.toArray())+"\n\n");
 
-        
+        copiedStack = copyStack(originalStack);
+        System.out.println("\n\nCopied Stack"+ Arrays.toString(copiedStack.toArray()));
+        System.out.println("Original Stack"+ Arrays.toString(originalStack.toArray()));
+
+
+    }
+
+    public static Stack<Integer> copyStack(Stack<Integer> s){
+        Stack<Integer> copiedStack = new Stack<>();
+        int element;
+        while(!s.isEmpty()){
+            element = s.pop();
+            copiedStack.add(element);
+        }
+
+        Queue<Integer> temporaryQueue = new LinkedList<>();
+
+        while (!copiedStack.isEmpty()){
+            element = copiedStack.pop();
+            s.add(element);
+            temporaryQueue.add(element);
+        }
+
+        while (!temporaryQueue.isEmpty()){
+            copiedStack.add(temporaryQueue.remove());
+        }
+
+        return copiedStack;
     }
 }
