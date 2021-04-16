@@ -3,6 +3,7 @@ package StacksAndQueues;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 /*Write a method stutter that takes a stack of integers as a parameter and replaces
 every value in the stack with two occurrences of that value For example, suppose the
@@ -18,18 +19,31 @@ Notice that you must preserve the original order. In the original list the 9 was
   storage to solve this problem*/
 public class stutter {
     public static void main(String[] args) {
-        Queue<Integer> q = new LinkedList();
+        Queue<Integer> q = new LinkedList<Integer>();
         q.add(4);
         q.add(6);
         q.add(-1);
         q.add(3);
         q.add(-5);
 
+        Stack<Integer> s = new Stack<>();
+
         System.out.println(Arrays.toString(q.toArray()));
-        for(int i=0;i<q.size();i++){
-            int e = q.remove();
-            q.add(e);
+
+        while(!s.isEmpty()){
+            int num = s.pop();
+            q.add(num);
+            q.add(num);
+
         }
+        while(!q.isEmpty()){
+            s.push(q.remove());
+        }
+
+        while ((!s.isEmpty())){
+            q.add(s.pop());
+        }
+
         System.out.println(Arrays.toString(q.toArray()));
     }
 }
