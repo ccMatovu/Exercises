@@ -19,19 +19,21 @@ public class slitStack {
         System.out.println("Check complete");
     }
 
-    public void splitStack(Stack<Integer> s) {
+    public void splitStack(Stack<Integer> stack) {
+
         Queue<Integer> tempQueue = new LinkedList<Integer>();
         int numNegatives = 0;
 
-        while(!s.isEmpty()) {
-            if(s.peek() < 0)
+        while(!stack.isEmpty()) {
+            if(stack.peek() < 0) {
                 numNegatives++;
-            tempQueue.add(s.pop());
+            }
+            tempQueue.add(stack.pop());
         }
 
         while(numNegatives > 0) {
             if(tempQueue.peek() < 0) {
-                s.push(tempQueue.remove());
+                stack.push(tempQueue.remove());
                 numNegatives--;
             } else {
                 tempQueue.add(tempQueue.remove());
@@ -39,7 +41,7 @@ public class slitStack {
         }
 
         while(!tempQueue.isEmpty())
-            s.push(tempQueue.remove());
+            stack.push(tempQueue.remove());
     }
 
 }
