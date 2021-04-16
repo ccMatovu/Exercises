@@ -34,6 +34,7 @@ public class collapse {
         s.add(1);
         s.add(3);
         s.add(8);
+        s.add(2);
 
         System.out.println("Original stack"+ Arrays.toString(s.toArray()));
 
@@ -62,7 +63,16 @@ public class collapse {
             }
         }
 
-        
+        while (!tempQ.isEmpty()){
+            s.add(tempQ.remove());
+        }
 
+        while (!s.isEmpty()){
+            tempQ.add(s.pop());
+        }
+
+        while (!tempQ.isEmpty()){
+            s.add(tempQ.remove());
+        }
     }
 }
