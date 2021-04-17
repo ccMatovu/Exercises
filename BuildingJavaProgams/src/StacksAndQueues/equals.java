@@ -31,19 +31,19 @@ public class equals {
 
     public static boolean equals(Stack<Integer> stack1, Stack<Integer> stack2){
 
-        boolean same = true;
+        boolean areSame = true;
         Stack<Integer> temporaryStack = new Stack<>();
 
         if(stack1.size() != stack2.size()){
             return false;
         }
 
-        while (same && !stack1.isEmpty()){
+        while (areSame && !stack1.isEmpty()){
             if(stack1.peek().equals( stack2.peek())){
                 temporaryStack.add(stack1.pop());
                 stack2.pop();
             }else{
-                same = false;
+                areSame = false;
             }
         }
 
@@ -52,7 +52,7 @@ public class equals {
             stack1.push(element);
             stack2.push(element);
         }
-        return same;
+        return areSame;
     }
 
 }
