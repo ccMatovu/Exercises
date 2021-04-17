@@ -18,9 +18,41 @@ public class equals {
         stack1.push(4);
         stack2.push(3);
         stack2.push(3);
-        stack2.push(4);
+        stack2.push(6);
 
         System.out.println("Stack one "+ Arrays.toString(stack1.toArray()));
         System.out.println("Stack two "+ Arrays.toString(stack2.toArray()));
+
+        equals check = new equals();
+        boolean checkResult = check.equals(stack1,stack2);
+
+        System.out.println("\nIt is "+checkResult+" that they are equal");
     }
+
+    public static boolean equals(Stack<Integer> stack1, Stack<Integer> stack2){
+
+        boolean same = true;
+        Stack<Integer> temporaryStack = new Stack<>();
+
+        if(stack1.size() != stack2.size()){
+            return false;
+        }
+
+        while (same && !stack1.isEmpty()){
+            if(stack1.peek().equals( stack2.peek())){
+                temporaryStack.add(stack1.pop());
+                stack2.pop();
+            }else{
+                same = false;
+            }
+        }
+
+        while (!temporaryStack.isEmpty()){
+            int element = temporaryStack.pop();
+            stack1.push(element);
+            stack2.push(element);
+        }
+        return same;
+    }
+
 }
