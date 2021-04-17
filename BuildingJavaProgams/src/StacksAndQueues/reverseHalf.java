@@ -3,6 +3,7 @@ package StacksAndQueues;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 /*
 * Write a method reverseHalf that reverses the order of half of the elements of a
@@ -44,6 +45,21 @@ public class reverseHalf {
     }
 
     private void reverseHalf(Queue<Integer> q) {
+        int size = q.size();
+        Stack<Integer> s = new Stack<>();
+
+        for(int i=0; i<size; i++){
+            if(i%2==0){
+                int element = q.remove();
+                q.add(element);
+            }else{
+                s.add(q.remove());
+            }
+        }
+
         
+
+
+
     }
 }
