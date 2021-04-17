@@ -3,6 +3,7 @@ package StacksAndQueues;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 /*
 * Write a method rearrange that takes a queue of integers as a parameter and
@@ -30,6 +31,29 @@ public class rearrange {
 
         System.out.println("Queue before rearrangement "+ Arrays.toString(q.toArray()));
 
+        rearrange re = new rearrange();
+        re.rearrange(q);
+        System.out.println("\nQueue after rearrangement "+Arrays.toString(q.toArray()));
+
+        System.out.println("\nQueue after rearrangement "+Arrays.toString(q.toArray()));
+
+    }
+    public void rearrange(Queue<Integer> q){
+        Stack<Integer> s = new Stack<>();
+
+        for(int i=0; i<2;i++){
+            for(int j = q.size(); j > 0; j--){
+                if(q.peek() % 2 !=0){
+                    s.add(q.remove());
+                }else{
+                    q.add(q.remove());
+                }
+            }
+
+            for(int z = s.size(); z >0; z--){
+                q.add(s.pop());
+            }
+        }
 
     }
 }
