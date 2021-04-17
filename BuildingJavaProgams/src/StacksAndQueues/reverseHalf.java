@@ -39,7 +39,7 @@ public class reverseHalf {
 
         reverseHalf re = new reverseHalf();
         re.reverseHalf(q);
-        System.out.println("Queue after "+Arrays.toString(q.toArray()));
+        System.out.println("\nQueue after  "+Arrays.toString(q.toArray()));
 
 
     }
@@ -57,7 +57,14 @@ public class reverseHalf {
             }
         }
 
-        
+        for(int i = 0;i<size; i++){
+            if(i%2==0){
+                int element = q.remove();
+                q.add(element);
+            }else{
+                q.add(s.pop());
+            }
+        }
 
 
 
