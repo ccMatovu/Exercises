@@ -53,4 +53,55 @@ public class GroceryBill {
     public String toString() {
         return receiptToString() + "\ntotal: " + valueToString(total);
     }
+
+    public String discountToString() {
+        return receiptToString() + "\nsub-total: " + valueToString(total) + "\ndiscount: " + valueToString(internalDiscount) + "\ntotal: " + valueToString(total - internalDiscount);
+    }
+
+    public static class Employee {
+        private String name;
+
+        public Employee(String name) {
+            this.name = name;
+        }
+
+        public String getName() {
+            return name;
+        }
+    }
+
+    public static class Item {
+        private String name;
+        private double price;
+        private double discount;
+
+        public Item(String name, double price, double discount) {
+            this.name = name;
+            this.price = price;
+            this.discount = discount;
+        }
+
+        public double getPrice() {
+            return price;
+        }
+
+        public double getDiscount() {
+            return discount;
+        }
+
+        private String valueToString(double value) {
+            String result = "" + Math.abs(value);
+            if(result.indexOf(".") == result.length() - 2) {
+                result += "0";
+            }
+            result = "$" + result;
+            return result;
+        }
+
+        public String toString() {
+            return name + " " + valueToString(price) + " (-" + valueToString(discount) + ")";
+        }
+    }
+
+//	REPLACEME
 }
