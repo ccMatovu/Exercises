@@ -28,4 +28,29 @@ public class GroceryBill {
     public void printReceipt() {
         System.out.println(this);
     }
+
+    private String valueToString(double value) {
+        value = Math.rint(value * 100) / 100.0;
+        String result = "" + Math.abs(value);
+        if(result.indexOf(".") == result.length() - 2) {
+            result += "0";
+        }
+        result = "$" + result;
+        return result;
+    }
+
+    public String receiptToString() {
+        String build = "items:\n";
+        for(int i = 0; i < receipt.size(); i++) {
+            build += "   " + receipt.get(i);
+            if(i != receipt.size() - 1) {
+                build += "\n";
+            }
+        }
+        return build;
+    }
+
+    public String toString() {
+        return receiptToString() + "\ntotal: " + valueToString(total);
+    }
 }
