@@ -46,4 +46,16 @@ public class DiscountBill extends GroceryBill {
             discountAmount += i.getDiscount();
         }
     }
+
+    public int getDiscountCount() {
+        return discountCount;
+    }
+
+    public double getDiscountAmount() {
+        return discountAmount;
+    }
+
+    public double getDiscountPercent() {
+        return (discountAmount * 100) / super.getTotal();
+    }
 }
