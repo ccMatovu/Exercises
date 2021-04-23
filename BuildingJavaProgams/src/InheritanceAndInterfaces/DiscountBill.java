@@ -26,4 +26,15 @@ public class DiscountBill extends GroceryBill {
     private boolean preferred;
     private int discountCount;
     private double discountAmount;
+
+    public DiscountBill(Employee clerk, boolean preferred) {
+        super(clerk);
+        this.discountCount = 0;
+        this.discountAmount = 0;
+        this.preferred = preferred;
+    }
+
+    public double getTotal() {
+        return super.getTotal() - discountAmount;
+    }
 }
