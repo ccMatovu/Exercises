@@ -19,4 +19,11 @@ public class FilteredAccount {
             return super.process(t);
         }
     }
+
+    public double percentFiltered() {
+        if (totalTrans == 0) {
+            return 0.0;
+        }
+        return zeroTrans * 100.0 / totalTrans;
+    }
 }
