@@ -1,6 +1,6 @@
 package InheritanceAndInterfaces;
 
-public class FilteredAccount {
+public class FilteredAccount extends Account{
     private int zeroTrans;
     private int totalTrans;
 
