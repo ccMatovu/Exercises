@@ -11,4 +11,11 @@ public class LinkedIntList {
     ...
 }*/
 public class set {
+    void set(int index, int val){
+        ListNode current = front;
+        index--;
+        while{
+            
+        }
+    }
 }
