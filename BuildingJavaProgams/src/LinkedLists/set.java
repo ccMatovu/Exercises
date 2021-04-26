@@ -9,7 +9,7 @@ Assume that you are adding this method to the LinkedIntList class as defined bel
 public class LinkedIntList {
     private ListNode front;   // null for an empty list
     ...
-}*/
+}
 public class set {
     void set(int index, int val){
         ListNode current = front;
@@ -21,3 +21,4 @@ public class set {
         current.data = val;
     }
 }
+*/
