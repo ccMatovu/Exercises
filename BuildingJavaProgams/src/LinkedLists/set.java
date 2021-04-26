@@ -14,8 +14,10 @@ public class set {
     void set(int index, int val){
         ListNode current = front;
         index--;
-        while{
-            
+        while(index >= 0){
+            index--;
+            current = current.next;
         }
+        current.data = val;
     }
 }
