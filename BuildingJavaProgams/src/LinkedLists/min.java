@@ -11,15 +11,23 @@ public class LinkedIntList {
     private ListNode front;   // null for an empty list
     ...
 }
-* */
-public class min {
+* ***********************************************
+public class min extends LinkedIntList{
     
     int min(){
         if(front == null){
             throw new NoSuchElementException();
         }
-
         ListNode curr = front;
-
+        int mini = front.data;
+        while(curr.next != null){
+            if(curr.next.data < mini){
+                mini = curr.next.data;
+            }
+            curr = curr.next;
+        }
+        return mini;
     }
 }
+
+*/
