@@ -8,6 +8,31 @@ public class LinkedIntList {
     private ListNode front;   // node holding first value in list (null if empty)
     private String name = "front";   // string to print for front of list
 
+
+    public boolean isSorted(){
+        ListNode current = this.front.next;
+        boolean sorted = true;
+        ListNode previous = front;
+
+        while(current != null){
+            if(current.data < previous.data){
+                return false;
+            }
+            previous = current;
+            current = current.next;
+
+        }
+
+        return sorted;
+    }
+
+
+
+
+
+
+
+
     // Constructs an empty list.
     public LinkedIntList() {
         front = null;

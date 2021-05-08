@@ -20,19 +20,27 @@ public class IsSorted extends LinkedIntList {
         list.add(4);
 
         System.out.println("list = "+ list.toString());
+        System.out.println("isSorted = "+list.isSorted());
     }
-
+/**
     boolean isSorted(){
-        ListNode current = this.front;
+
+        if(front == null){
+            return true;
+        }
+        ListNode current = this.front.next;
         boolean sorted = true;
+        ListNode previous = front;
 
         while(current != null){
-            if(current.data > current.next.data){
+            if(current.data < previous.data){
                 return false;
             }
+            previous = current;
             current = current.next;
+
         }
 
         return sorted;
-    }
+    }*/
 }
