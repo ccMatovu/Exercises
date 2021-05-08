@@ -1,6 +1,8 @@
 package StacksAndQueues;
 
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 /*
@@ -30,12 +32,50 @@ public class switchPairs {
         s.add(1);
         s.add(9);
         s.add(5);
-       // s.add(4);
+        s.add(4);
 
-        System.out.print("Original Stack = "+ Arrays.toString(s.toArray()));
+        System.out.println("Original Stack = "+ Arrays.toString(s.toArray()));
 
         switchPairs(s);
 
-        System.out.println("Stack with switched pairs = "+Arrays.toString(s.toArray()));
+        System.out.println("\nStack with switched pairs = "+Arrays.toString(s.toArray()));
     }
+
+    public static void switchPairs(Stack<Integer> s){
+        Queue<Integer> q = new LinkedList<>();
+        int size = s.size();
+        int top=0;
+        boolean odd = false;
+
+        if((size%2) !=0){
+            top=s.pop();
+            odd = true;
+            size--;
+        }
+
+        for(int i=0; i<size; i++){
+            q.add(s.pop());
+        }
+        for(int i=0; i<size; i++){
+            s.add(q.remove());
+        }
+
+
+        for(int i=0; i<(size/2); i++){
+            int element1 = s.pop();
+           // System.out.println(element1);
+            int element2 = s.pop();
+            q.add(element2);
+            q.add(element1);
+        }
+
+        for(int i=0; i<size; i++) {
+            s.add(q.remove());
+        }
+
+        if(odd){
+            s.add(top);
+        }
+    }
+
 }
