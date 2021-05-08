@@ -3,6 +3,7 @@ package StacksAndQueues;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 /*
 * Write a method isPalindrome that takes a queue of integers as a parameter
@@ -27,12 +28,36 @@ The call on isPalindrome would instead return false because this sequence is not
 public class isPalindrome {
     public static void main(String[] args) {
         Queue<Integer> q = new LinkedList<>();
-        q.add(3);
+        q.add(4);
         q.add(2);
         q.add(5);
         q.add(2);
         q.add(3);
 
-        System.out.print(Arrays.toString(q.toArray()));
+        System.out.println(Arrays.toString(q.toArray()));
+
+        System.out.println(isPalindrome(q));
+
+        System.out.println(Arrays.toString(q.toArray()));
+    }
+
+    public static boolean isPalindrome(Queue<Integer> q){
+        Stack<Integer> s = new Stack<>();
+        boolean palindrone = true;
+        for(int i =0; i<q.size();i++){
+            int element= q.remove();
+            s.add(element);
+            q.add(element);
+        }
+
+        for(int j =0; j<q.size(); j++){
+            int checkElement = q.remove();
+            q.add(checkElement);
+            if(checkElement != s.pop()){
+                palindrone = false;
+            }
+        }
+
+        return palindrone;
     }
 }
