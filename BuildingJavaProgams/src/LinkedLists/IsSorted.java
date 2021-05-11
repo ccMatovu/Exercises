@@ -9,10 +9,10 @@ public class LinkedIntList {
     private ListNode front;   // null for an empty list
     ...
 }*/
-public class IsSorted extends LinkedIntList {
+public class IsSorted  {
 
     public static void main(String[] args) {
-        LinkedIntList list = new IsSorted();
+        LinkedIntList list = new LinkedIntList();
         list.add(7);
         list.add(1);
         list.add(9);
