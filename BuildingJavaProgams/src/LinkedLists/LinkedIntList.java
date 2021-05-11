@@ -9,6 +9,23 @@ public class LinkedIntList {
     private String name = "front";   // string to print for front of list
 
 
+    public int lastIndexOf(int number){
+
+        int index =-1;
+        ListNode current = front;
+        int position = 0;
+
+        while(current != null){
+            if(current.data == number ){
+                index = position;
+            }
+                current = current.next;
+                position++;
+        }
+        return index;
+    }
+
+
     public boolean isSorted(){
         ListNode current = this.front.next;
         boolean sorted = true;

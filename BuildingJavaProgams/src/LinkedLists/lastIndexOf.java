@@ -9,7 +9,7 @@ package LinkedLists;
 [1, 18, 2, 7, 18, 39, 18, 40]
 If the call had instead been list.lastIndexOf(3), the method would return -1
 *  because 3 does not appear in the list. You may not call any other methods of
-*  the class to solve this problem.*/
+*  the class to solve this problem.
 public class lastIndexOf {
     public static void main(String[] args) {
         LinkedIntList list = new LinkedIntList();
@@ -24,4 +24,23 @@ public class lastIndexOf {
         System.out.println("Last index of 4 is "+list.lastIndexOf(4));
     }
 
+
+    public int lastIndexOf(int number){
+
+        int index =-1;
+        ListNode current = front;
+        int position = 0;
+
+        while(current != null){
+            if(current.data == number ){
+                index = position;
+            }
+                current = current.next;
+                position++;
+        }
+        return index;
+    }
+
 }
+
+ */
