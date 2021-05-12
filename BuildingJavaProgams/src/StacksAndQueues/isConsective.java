@@ -1,6 +1,8 @@
 package StacksAndQueues;
 
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 /*
@@ -32,7 +34,39 @@ public class isConsective {
 
         System.out.println(Arrays.toString(s.toArray()));
 
-        
+        System.out.println(isConsecutive(s));
 
+        System.out.println(Arrays.toString(s.toArray()));
+    }
+
+    public static boolean isConsecutive(Stack<Integer> s){
+        Queue<Integer> q = new LinkedList<>();
+        boolean consective = true;
+        while(!s.isEmpty()){
+          int element = s.pop();
+
+            q.add(element);
+
+          try {
+              if ((element - 1) != s.peek()) {
+                  consective = false;
+              }
+          }catch (Exception e){
+              continue;
+            }
+        }
+
+        while (!q.isEmpty()){
+            s.add(q.remove());
+        }
+
+        while(!s.isEmpty()){
+            q.add(s.pop());
+        }
+
+        while (!q.isEmpty()){
+            s.add(q.remove());
+        }
+        return consective;
     }
 }
