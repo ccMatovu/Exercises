@@ -1,4 +1,8 @@
 package StacksAndQueues;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
 /*
 * Write a method reorder that takes a queue of integers as a parameter and that puts
 *  the integers into sorted (nondecreasing) order assuming that the queue is already
@@ -15,6 +19,7 @@ Notice that the values now appear in sorted order taking into account the sign o
 *  the numbers. You may use one stack as auxiliary storage to solve this problem.*/
 public class reorder {
     public static void main(String[] args) {
+        Queue<Integer> q  = new LinkedList<>();
         
     }
 }
