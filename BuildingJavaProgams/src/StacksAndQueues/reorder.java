@@ -20,6 +20,9 @@ Notice that the values now appear in sorted order taking into account the sign o
 public class reorder {
     public static void main(String[] args) {
         Queue<Integer> q  = new LinkedList<>();
-        
+        q.add(1);
+        q.add(1);
+        q.add(1);
+        q.add(1);
     }
 }
