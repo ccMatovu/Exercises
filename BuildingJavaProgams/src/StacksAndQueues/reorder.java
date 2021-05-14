@@ -1,5 +1,7 @@
 package StacksAndQueues;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -21,8 +23,15 @@ public class reorder {
     public static void main(String[] args) {
         Queue<Integer> q  = new LinkedList<>();
         q.add(1);
-        q.add(1);
-        q.add(1);
-        q.add(1);
+        q.add(2);
+        q.add(-2);
+        q.add(4);
+        q.add(-5);
+        q.add(8);
+        q.add(-8);
+
+        System.out.println("Queue before = "+ Arrays.toString(q.toArray()));
+        reoder(q);
+        System.out.println("Queue after reorder = "+ Arrays.toString(q.toArray()));
     }
 }
