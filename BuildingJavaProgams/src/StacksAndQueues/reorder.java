@@ -23,7 +23,7 @@ Notice that the values now appear in sorted order taking into account the sign o
 public class reorder {
     public static void main(String[] args) {
         Queue<Integer> q  = new LinkedList<>();
-        q.add(1);
+        q.add(3);
         q.add(2);
         q.add(-2);
         q.add(4);
@@ -32,21 +32,28 @@ public class reorder {
         q.add(-8);
 
         System.out.println("Queue before = "+ Arrays.toString(q.toArray()));
-        reoder(q);
+        reorder(q);
         System.out.println("Queue after reorder = "+ Arrays.toString(q.toArray()));
     }
 
-    public static void reoder(Queue<Integer> q) {
+    public static void reorder(Queue<Integer> q) {
         Stack<Integer> s = new Stack<>();
 
-        for(int i=1; i<q.size(); i++){
+        while(!q.isEmpty()){
             int element = q.remove();
 
-            for(int j=0; j<q.size()-i; j++){
-                if(q.peek > element){
-                    
+            for(int j=q.size(); j > 0; j--){
+                if(q.peek() > element){
+                    q.add(element);
+                    element = q.remove();
+                }else{
+                    q.add(q.remove());
                 }
             }
+            s.add(element);
+        }
+        while(!s.isEmpty()){
+            q.add(s.pop());
         }
     }
 }
