@@ -4,6 +4,7 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 /*
 * Write a method reorder that takes a queue of integers as a parameter and that puts
@@ -33,5 +34,19 @@ public class reorder {
         System.out.println("Queue before = "+ Arrays.toString(q.toArray()));
         reoder(q);
         System.out.println("Queue after reorder = "+ Arrays.toString(q.toArray()));
+    }
+
+    public static void reoder(Queue<Integer> q) {
+        Stack<Integer> s = new Stack<>();
+
+        for(int i=1; i<q.size(); i++){
+            int element = q.remove();
+
+            for(int j=0; j<q.size()-i; j++){
+                if(q.peek > element){
+                    
+                }
+            }
+        }
     }
 }
