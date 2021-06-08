@@ -4,6 +4,6 @@
 //
 
 export const gigasecond = (moment) => {
-  var date = moment.getTime()+1000000000;
+  var date = moment.getTime()+(1000000000000);
   return new Date(date);
 };
