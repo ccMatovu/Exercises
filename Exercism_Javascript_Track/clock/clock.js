@@ -14,13 +14,15 @@ export class Clock {
   }
 
   toString() {
+
+    //let hrs = (this.hours < 0) ? 24-()
     let totalMinutes = (this.hours * 60) + (this.minutes);
     let totalHours = totalMinutes/60;
-    let timeHours = Math.floor(totalHours % 24);
+    let timeHours = (this.hours >= 0) ? Math.floor(totalHours % 24) : 24 - (Math.floor(totalHours % 24));
     let timeMinutes = totalMinutes % 60;
 
     let realHours = (timeHours < 10) ? '0'+timeHours  : ''+timeHours;
-    let realMinutes = (timeMinutes < 10) ? '0'+timeMinutes : '0'+timeMinutes;
+    let realMinutes = (timeMinutes < 10) ? '0'+timeMinutes : ''+timeMinutes;
 
     
 
@@ -29,20 +31,20 @@ export class Clock {
     
   }
 
-  // plus() {
-  //   throw new Error('Remove this statement and implement this function');
-  // }
+  plus() {
+    throw new Error('Remove this statement and implement this function');
+  }
 
-  // minus() {
-  //   throw new Error('Remove this statement and implement this function');
-  // }
+  minus() {
+    throw new Error('Remove this statement and implement this function');
+  }
 
-  // equals() {
-  //   throw new Error('Remove this statement and implement this function');
-  // }
+  equals() {
+    throw new Error('Remove this statement and implement this function');
+  }
 }
 
-const p =new Clock(8);
+const p =new Clock(1,00);
 console.log('check');
 console.log(p.toString());
 console.log('0'+'0');
