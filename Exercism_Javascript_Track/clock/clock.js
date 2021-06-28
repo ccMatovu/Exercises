@@ -19,13 +19,12 @@ export class Clock {
     let timeHours = Math.floor(totalHours % 24);
     let timeMinutes = totalMinutes % 60;
 
-    let realHours ;//= (totalHours < 0) ? totalHours.toString()  : ''+totalHours;
+    let realHours = (timeHours < 10) ? '0'+timeHours  : ''+timeHours;
+    let realMinutes = (timeMinutes < 10) ? '0'+timeMinutes : '0'+timeMinutes;
 
-    if(totalHours<0){
-      realHours =  
-    }
+    
 
-    return `${realHours}:${timeMinutes}`;
+    return `${realHours}:${realMinutes}`;
 
     
   }
@@ -43,10 +42,9 @@ export class Clock {
   // }
 }
 
-const p =new Clock(0,160);
+const p =new Clock(8);
 console.log('check');
 console.log(p.toString());
+console.log('0'+'0');
 
-let foo = 45;
-let bar = ''+foo;
-console.log(bar);
+
