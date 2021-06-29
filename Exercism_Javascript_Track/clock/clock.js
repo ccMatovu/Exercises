@@ -12,8 +12,9 @@ export class Clock {
     this.minutes = minutes;
 
   }
+}
 
-  toString() {
+  Clock.prototype.toString = function() {
     let mins = this.minutes;
     let hrs = this.hours;
 
@@ -59,9 +60,10 @@ export class Clock {
     
   }
 
-  // plus() {
-  //   throw new Error('Remove this statement and implement this function');
-  // }
+  Clock.prototype.plus = function(addMins) {
+    const newClock = new Clock(this.hours,this.minutes + addMins);
+    return newClock.toString();
+  }
 
   // minus() {
   //   throw new Error('Remove this statement and implement this function');
@@ -70,11 +72,14 @@ export class Clock {
   // equals() {
   //   throw new Error('Remove this statement and implement this function');
   // }
-}
 
-const p =new Clock(-121,-5810);
+
+const p =new Clock(10,0).plus(3);
+//p.plus(3);
 console.log('check');
 console.log(p.toString());
 console.log('0'+'0');
+p.plus(7);
+console.log(p.toString());
 
 
