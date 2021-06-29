@@ -65,9 +65,10 @@ export class Clock {
     return newClock.toString();
   }
 
-  // minus() {
-  //   throw new Error('Remove this statement and implement this function');
-  // }
+  Clock.prototype.minus = function(subractMins) {
+    const newClock = new Clock(this.hours,this.minutes - addMins);
+    return newClock.toString();
+  }
 
   // equals() {
   //   throw new Error('Remove this statement and implement this function');
@@ -79,7 +80,6 @@ const p =new Clock(10,0).plus(3);
 console.log('check');
 console.log(p.toString());
 console.log('0'+'0');
-p.plus(7);
 console.log(p.toString());
 
 
