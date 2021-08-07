@@ -17,14 +17,10 @@ function collatz(number,stepsCount){
     return stepsCount;
   }
   else if( (number % 2 ) == 0){
-    console.log('cout = '+ number + stepsCount);
-    collatz(number / 2, stepsCount + 1);
+   return collatz(number / 2, stepsCount + 1);
   }
   else{
-    collatz((3 * number) +1, stepsCount + 1);
+    return collatz((3 * number) +1, stepsCount + 1);
   }
-
-  console.log("st=  "+number+stepsCount);
-  return stepsCount;
 }
 
