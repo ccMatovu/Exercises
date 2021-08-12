@@ -4,21 +4,14 @@
 //
 
 export const transform = (old) => {
-  const newScores = {};
-  
-  // console.log(old[1]);
-  // console.log(old.hasOwnProperty(5));
-  // console.log(Object.keys(old).length);
+  const newSystem = {};
 
   for(let i = 1; i < 11; i++){
-    //console.log(i);
     if(old.hasOwnProperty(i)){
-      let array = old[i];
-      array.forEach((element) => {
-        //console.log('the ele is = '+element);
-        newScores[element.toLowerCase()] = i;
+      old[i].forEach((element) => {
+        newSystem[element.toLowerCase()] = i;
       });
     }
   }
-  console.log(newScores);
+  return newSystem;
 };
