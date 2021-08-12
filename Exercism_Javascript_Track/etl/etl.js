@@ -14,4 +14,13 @@ export const transform = (old) => {
     }
   }
   return newSystem;
+
+  //Alternate solution
+  /*for(let i in old){
+      old[i].forEach((element) => {
+        newSystem[element.toLowerCase()] = Number(i);
+      });
+    
+  }
+  return newSystem;  */
 };
