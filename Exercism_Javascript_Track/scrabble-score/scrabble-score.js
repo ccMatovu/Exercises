@@ -10,19 +10,17 @@ export const score = (letters) => {
     3: ['b','c','m','p'],
     4: ['f','h','v','w','y'],
     5: ['k'],
-    6: ['j','x'],
-    7: ['q','z']
+    8: ['j','x'],
+    10: ['q','z']
   };
-  let array = letters.split('');
-  let points = array.reduce((accu,element) =>{
+  let array = letters.toLowerCase().split('');
+  return array.reduce((accumulator,element) =>{
     for(let key in values){
-      let arrayValues = values[key];
-      for(let value of arrayValues){
-        if(arrayValues.includes(element)){
-          return accu + Number(key);
+      for(let value of values[key]){
+        if(values[key].includes(element)){
+          return accumulator + Number(key);
         }
       }
     }
   },0);
-  return points;
-};
+}
