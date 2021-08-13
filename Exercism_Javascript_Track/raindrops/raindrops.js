@@ -3,6 +3,31 @@
 // convenience to get you started writing code faster.
 //
 
-export const convert = () => {
-  throw new Error('Remove this statement and implement this function');
+export const convert = (number) => {
+
+  if((number % 3 == 0) && (number % 5 ==0) && (number % 7 == 0)){
+    return 'PlingPlangPlong';
+
+  }
+  else if((number % 3 == 0) && (number % 5 ==0)){
+    return 'PlingPlang';
+  }
+  else if((number % 3 == 0) && (number % 7 == 0)){
+    return 'PlingPlong';
+  }
+  else if((number % 5 == 0) && (number % 7 == 0)){
+    return 'PlangPlong';
+  }
+  else if(number % 3 == 0){
+    return 'Pling';
+  }
+  else if(number % 5 == 0){
+    return 'Plang';
+  }
+  else if(number % 7 == 0){
+    return 'Plong';
+  }
+  else{
+    return String(number);
+  }
 };
