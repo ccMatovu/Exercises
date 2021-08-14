@@ -2,9 +2,9 @@
 // This is only a SKELETON file for the 'Space Age' exercise. It's been provided as a
 // convenience to get you started writing code faster.
 //
+const SECONDS_PER_YEAR_ON_EARTH = 31557600;
 
 export const age = (planet,seconds) => {
-  const SECONDS_PER_YEAR_ON_EARTH = 31557600;
   const planetYears = {
     mercury: 0.2408467,
     venus: 0.61519726,
@@ -16,10 +16,5 @@ export const age = (planet,seconds) => {
     neptune: 164.79132
   };
   const earthAge = seconds / SECONDS_PER_YEAR_ON_EARTH;
-  for(let body in planetYears){
-    if(body == planet){
-      let ageOnPlanet = parseFloat((earthAge / planetYears[planet]).toFixed(2));
-      return ageOnPlanet;
-    }
-  }
-};
+  return parseFloat((earthAge / planetYears[planet]).toFixed(2));
+}
