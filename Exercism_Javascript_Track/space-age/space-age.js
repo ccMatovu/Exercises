@@ -4,7 +4,8 @@
 //
 
 export const age = (planet,seconds) => {
-  let spaceAge = {
+  const SECONDS_PER_YEAR_ON_EARTH = 31557600;
+  const planetYears = {
     mercury: 0.2408467,
     venus: 0.61519726,
     earth: 1.0,
@@ -14,10 +15,11 @@ export const age = (planet,seconds) => {
     uranus: 84.016846,
     neptune: 164.79132
   };
-  let earthYears = seconds / 31557600;
-  for(let body in spaceAge){
+  const earthAge = seconds / SECONDS_PER_YEAR_ON_EARTH;
+  for(let body in planetYears){
     if(body == planet){
-      return parseFloat((earthYears / spaceAge[body]).toFixed(2));
+      let ageOnPlanet = parseFloat((earthAge / planetYears[planet]).toFixed(2));
+      return ageOnPlanet;
     }
   }
 };
