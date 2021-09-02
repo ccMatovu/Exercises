@@ -14,6 +14,7 @@ export const parse = (name) => {
   .reduce((accumulator,word)=>{
     return accumulator +=word[0].toUpperCase();
   },'');
+
   return acronym;
 };
 
