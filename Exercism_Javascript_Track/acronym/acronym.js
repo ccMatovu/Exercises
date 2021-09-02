@@ -3,6 +3,17 @@
 // convenience to get you started writing code faster.
 //
 
-export const parse = () => {
-  throw new Error('Remove this statement and implement this function');
+
+export const parse = (name) => {
+  let acronym = name.split("-")
+  .join(' ')
+  .split('_')
+  .join(' ')
+  .split(' ')
+  .filter(word=> word)
+  .reduce((accumulator,word)=>{
+    return accumulator +=word[0].toUpperCase();
+  },'');
+  return acronym;
 };
+
