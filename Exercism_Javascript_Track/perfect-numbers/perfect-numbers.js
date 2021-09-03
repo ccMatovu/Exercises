@@ -4,19 +4,18 @@
 //
 
 export const classify = (number) => {
- if(number < 1){
+  if(number < 1){
     throw new Error('Classification is only possible for natural numbers.');
   }
-  let factors = [];
-
-  for(let i = 1; i <= (number/2)+1; i++){
+  
+  let aliquotSum = 0;
+  for(let i = 1; i <= (number/2); i++){
     if(number % i ==0){	
-      factors.push(i);
+      aliquotSum += i;
     }
   }
 
-  let aliquotSum = factors.reduce((sum,factor)=>sum + factor);
-  if((aliquotSum < number) || (number < 3)){
+  if(aliquotSum < number){
     return 'deficient';
   }else if(aliquotSum > number){
     return 'abundant';
