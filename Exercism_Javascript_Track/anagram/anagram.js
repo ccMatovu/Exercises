@@ -3,17 +3,20 @@
 // convenience to get you started writing code faster.
 //
 
-export const findAnagrams = (word,candidates) => {
+export const findAnagrams = (checkWord,candidates) => {
   let anagrams = [];
   for(let candidate of candidates){
-    let check = candidate.split('').every((element)=>{
-     console.log(element);
-		console.log(word.includes(element));
-		return word.toLowerCase().includes(element.toLowerCase());
-      
+    let word = checkWord.toLowerCase();
+    let check = candidate.toLowerCase().split('').every((element) => {
+    if(word.includes(element) && (checkWord.toLowerCase() != candidate.toLowerCase())){
+      let index = word.indexOf(element);
+      word = word.slice(0,index) + word.slice(index+1);
+      return true;
+    }else{
+      return false;
+    }      
     });
-    if(check && (candidate.length == word.length)){
-      console.log(candidate);
+    if(check && (candidate.length == checkWord.length)){
       anagrams.push(candidate);
     }
   }
