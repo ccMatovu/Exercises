@@ -94,7 +94,7 @@ describe('Phone Number', () => {
       );
     });
 
-    xtest('invalid if exchange code starts with 1 on valid 11-digit number', () => {
+    test('invalid if exchange code starts with 1 on valid 11-digit number', () => {
       expect(() => clean('1 (223) 156-7890')).toThrow(
         new Error('Exchange code cannot start with one')
       );
