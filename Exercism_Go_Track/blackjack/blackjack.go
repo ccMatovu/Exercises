@@ -1,7 +1,5 @@
 package blackjack
 
-
-
 // ParseCard returns the integer value of a card following blackjack ruleset.
 func ParseCard(card string) int {
 	switch card {
@@ -25,11 +23,7 @@ func ParseCard(card string) int {
 		return 9
 	case "ten":
 		return 10
-	case "jack":
-		return 10
-	case "queen":
-		return 10
-	case "king":
+	case "jack", "queen", "king":
 		return 10
 	default:
 		return 0
@@ -38,7 +32,7 @@ func ParseCard(card string) int {
 
 // IsBlackjack returns true if the player has a blackjack, false otherwise.
 func IsBlackjack(card1, card2 string) bool {
-	return (ParseCard(card1) + ParseCard(card2)) == 21
+	return ParseCard(card1) + ParseCard(card2) == 21
 }
 
 // LargeHand implements the decision tree for hand scores larger than 20 points.
@@ -58,21 +52,21 @@ func LargeHand(isBlackjack bool, dealerScore int) string {
 
 // SmallHand implements the decision tree for hand scores with less than 21 points.
 func SmallHand(handScore, dealerScore int) string {
-	sum := handScore + dealerScore
-	hand := ""
+	hand := "H"
 
 	switch {
-	case sum >= 17:
-		hand = "stand"
-	case sum <= 11:
-		hand = "hit"
-	case (sum >= 12) && (sum <= 16):
+	case (handScore >= 17):
+		hand = "S"
+	case handScore <= 11:
+		hand = "H"
+	case (handScore >= 12) && (handScore <= 16):
 		switch {
 		case dealerScore <= 6:
-			hand = "stand"
+			hand = "S"
 		case dealerScore >= 7:
-			hand = "hit"
+			hand = "H"
 		}
 	}
 	return hand
 }
+
