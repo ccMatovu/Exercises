@@ -1,35 +1,24 @@
 package isbn
 
-import "unicode"
-func IsValidISBN(isbn string) bool {
+func IsValidISBN(isbn string) bool  {
 	sop := 0
 	count := 10
-	cleanNum, clean := cleanNumber(isbn)
-	if !clean {
-		return false
-	}
-	for _, number := range cleanNum {
-		sop += number * count
-		count--
-	}
-	return sop%11 == 0
-}
-
-func cleanNumber(isbn string) ([]int, bool) {
-	cleanNum := make([]int, 0)
-	for i, num := range isbn {
-		if unicode.IsNumber(num) {
-			cleanNum = append(cleanNum, int(num-'0'))
-		} else if (i == len(isbn)-1) && (num == 'X') {
-			cleanNum = append(cleanNum, 10)
+	for i,num := range isbn {
+		if num >= 48 && num <= 57{  //between 0 and 9 in unicode
+			sop += int(num - '0') * count
+			count--
+		}else if num == 'X' && i == len(isbn)-1{
+			sop += 10 * count
+			count--
+		}else if num == '-'{
+			continue
+		}else{
+			return false
 		}
 	}
-	if len(cleanNum) != 10 {
-		return cleanNum, false
-	}
-	return cleanNum, true
+	return sop % 11 == 0 && count == 0
 }
 
-// BenchmarkIsValidISBN-16           216424              5208 ns/op
+// BenchmarkIsValidISBN-16          6029314               185.9 ns/op
 // PASS
-// ok      isbn    1.187s
+// ok      isbn    1.325s
