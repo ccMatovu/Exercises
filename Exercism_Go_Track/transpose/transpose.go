@@ -1,5 +1,6 @@
 package transpose
 
+
 	func Transpose(input []string) []string {
 
 	output := make([]string, 0)
